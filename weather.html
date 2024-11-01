@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="weather.css">
+    <!-- Add this in the head section -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Forecast</h1>
+
+        <!-- Search Container -->
+        <div class="search-container">
+            <input type="text" id="locationInput" placeholder="Enter city name...">
+            <button id="searchBtn">🔍</button>
+            <button id="locationBtn">📍</button>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorText" class="error-message"></div>
+
+        <!-- Loading Text -->
+        <div id="loadingText" class="loading" style="display: none;">Loading weather data...</div>
+
+        <!-- Weather Card -->
+        <div id="weatherCard" class="weather-card">
+            <div class="weather-location" id="location"></div>
+
+            <div class="weather-grid">
+                <div class="weather-item">
+                    <div class="weather-icon">🌡️</div>
+                    <div class="weather-value"><span id="temperature"></span>°C</div>
+                    <div class="weather-label">Temperature</div>
+                </div>
+
+                <div class="weather-item">
+                    <div class="weather-icon">☀️</div>
+                    <div class="weather-value" id="condition"></div>
+                    <div class="weather-label">Condition</div>
+                </div>
+
+                <div class="weather-item">
+                    <div class="weather-icon">💨</div>
+                    <div class="weather-value"><span id="windSpeed"></span> km/h</div>
+                    <div class="weather-label">Wind Speed</div>
+                </div>
+
+                <div class="weather-item">
+                    <div class="weather-icon">💧</div>
+                    <div class="weather-value"><span id="humidity"></span>%</div>
+                    <div class="weather-label">Humidity</div>
+                </div>
+            </div>
+
+            <div class="feels-like">
+                <div class="weather-label">Feels like</div>
+                <div class="weather-value"><span id="feelsLike"></span>°C</div>
+            </div>
+        </div>
+    </div>
+<!-- Add this in your HTML body where you want the map to appear -->
+<div id="map" style="height: 400px; width: 100%; margin-bottom: 20px;"></div>
+    <script src="weather.js"></script>
+</body>
+</html>
